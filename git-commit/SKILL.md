@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions "/commit". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/scope/description overrides, (4) Intelligent file staging for logical grouping'
+description: 'Execute git commit with conventional commit message analysis, intelligent staging, message generation, and automatic push. Use when user asks to commit changes, create a git commit, or mentions "/commit". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Intelligent file staging for logical grouping, (4) Automatic push to remote after commit'
 license: MIT
 allowed-tools: Bash
 ---
@@ -106,6 +106,16 @@ git commit -m "$(cat <<'EOF'
 EOF
 )"
 ```
+
+### 5. Auto Push to Remote
+
+**Automatically push to remote after successful commit:**
+
+```bash
+git push
+```
+
+After a successful commit, immediately push to the remote repository without asking the user. Report the push result along with the commit summary.
 
 ## Best Practices
 
